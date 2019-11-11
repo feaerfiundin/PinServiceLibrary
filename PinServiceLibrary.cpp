@@ -1,18 +1,27 @@
+#include "PinServiceLibrary.h"
+
 /*
- Name:		PinServiceLibrary.cpp
- Created:	16/10/2017 16:20:55
- Author:	feaer.fiundin
- Editor:	http://www.visualmicro.com
+File Name : PinServiceLibrary.h
+Created : 16 / 10 / 2017 16 : 20 : 55
+Author : Stefano Crivellin -- feaer.fiundin at googlemail dot com
+Version : 0.1.00
+Editor : http://www.visualmicro.com
+Licence:		CC BY - NC
+Licence html : <a rel = "license" href = "http://creativecommons.org/licenses/by-nc/4.0/"><img alt = "Licenza Creative Commons" style = "border-width:0" src = "https://i.creativecommons.org/l/by-nc/4.0/88x31.png" / >< / a><br / ><span xmlns : dct = "http://purl.org/dc/terms/" property = "dct:title">PinServiceLybrary< / span> di<a xmlns : cc = "http://creativecommons.org/ns#" href = "https://github.com/feaerfiundin/PinServiceLibrary" property = "cc:attributionName" rel = "cc:attributionURL">Setfano Crivellin< / a> è distribuito con Licenza <a rel = "license" href = "http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribuzione - Non commerciale 4.0 Internazionale< / a>.<br / >Permessi ulteriori rispetto alle finalità della presente licenza possono essere disponibili presso <a xmlns : cc = "http://creativecommons.org/ns#" href = "https://github.com/feaerfiundin/PinServiceLibrary" rel = "cc:morePermissions">https ://github.com/feaerfiundin/PinServiceLibrary</a>
+
+History:
+0.1.00 - Initial Version
+0.1.01 - Add documentation
+
+
 */
 
-#include "PinServiceLibrary.h"
 
 
 
 void PinServiceClass::init()
 {
-
-
+	
 }
 
 pinDate PinServiceClass::newPin(int number, uint8_t pinMode, uint8_t pinstatus)
@@ -21,6 +30,7 @@ pinDate PinServiceClass::newPin(int number, uint8_t pinMode, uint8_t pinstatus)
 	newpindate.number = number;
 	newpindate.pinMode = pinMode;
 	newpindate.pinStatus = pinstatus;
+	pinInit(newpindate);
 	return newpindate;
 }
 
@@ -32,7 +42,7 @@ void PinServiceClass::arrayNewInit(pinDate pinNameArray[], int pinNumberArray[],
 	}
 }
 
-void PinServiceClass::newInit(pinDate &pinName, int pinNumber, uint8_t pinMode, uint8_t pinStatus)
+void PinServiceClass::newInit(pinDate pinName, int pinNumber, uint8_t pinMode, uint8_t pinStatus)
 {
 	pinName = newPin(pinNumber, pinMode, pinStatus);
 	pinInit(pinName);
@@ -45,7 +55,7 @@ void PinServiceClass::pinInit(pinDate newpininit)
 	digitalWrite(newpininit.number, newpininit.pinStatus);
 }
 
-void PinServiceClass::pinChangeStatus(pinDate &pinchange, uint8_t newStatus)
+void PinServiceClass::pinChangeStatus(pinDate pinchange, uint8_t newStatus)
 {
 
 	int pinActualStatus = digitalRead(pinchange.number);
