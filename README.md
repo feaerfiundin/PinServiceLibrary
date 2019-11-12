@@ -1,6 +1,6 @@
 # PinServiceLibrary
 
-##PinServiceLibrary
+## PinServiceLibrary
 
 Author	:			Esc4DEV -- feaer.fiundin at gmail dot com
 Version :			0.1.02
@@ -8,15 +8,15 @@ documentation date :12/11/2019
 
 
 
-##Todo List
+## Todo List
 
-###Class PinServiceClass  
+### Class PinServiceClass  
 	- implement all Analog Function 
 
 
-##Class Index
+## Class Index
 
-###Class List
+### Class List
 
 Here are the classes, structs, unions and interfaces with brief descriptions:
 
@@ -24,18 +24,18 @@ Here are the classes, structs, unions and interfaces with brief descriptions:
 	2.pinDigital  	
 	3.PinServiceClass  	
 
-##Class Documentation
-###pinAnalog Struct Reference
+## Class Documentation
+	### pinAnalog Struct Reference
 
-	Detailed Description
-		pinAnalog analog pin Struct
+		Detailed Description
+			pinAnalog analog pin Struct
 
-	Parameters:
+		Parameters:
 
-		-number 		:name of digital pin example value: A1,A2,A3... 
-		-_previusValue 	:last value read 
-		-refVolt 	:reference voltage in mv, if not set base value is 5000 mv 
-		-noise 		:param reduce read noise value is 0 to 1023, in practice 0..20 default value is 2 -max noise = 20 
+			-number 		:name of digital pin example value: A1,A2,A3... 
+			-_previusValue 	:last value read 
+			-refVolt 	:reference voltage in mv, if not set base value is 5000 mv 
+			-noise 		:param reduce read noise value is 0 to 1023, in practice 0..20 default value is 2 -max noise = 20 
 
 
 
